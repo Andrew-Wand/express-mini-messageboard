@@ -14,7 +14,7 @@ const messages = [
     user: "Charles",
     added: new Date()
   }
-]
+];
 
 
 
@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
 });
 
 
-
+/*GET new form */
 router.get('/new', function (req, res, next) {
   res.render('form', { title: 'Mini Messageboard', messages: messages });
 });
@@ -35,9 +35,9 @@ router.get('/new', function (req, res, next) {
 
 
 
-// router.post('/new', function(req, res, next) {
-//   console.log(req.body.messageText);
-//   console.log(req.body.authorName);
-// })
+router.post('/new', function(req, res, next) {
+  messages.push({text: req.body.messageText, user: req.body.authorName, added: new Date()});
+  res.redirect('/');
+});
 
 module.exports = router;

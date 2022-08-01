@@ -17,14 +17,14 @@
   <ul>
     <% messages.map((message)=>{ %>
     <li>
-      <%= message.text %>
       <%= message.user %>
+      <%= message.text %>
       <%= message.added %>
     </li>
     <% }) %>
   </ul>
 
-
+  <a href="/new">add new message</a>
 </body>
 
 </html>
