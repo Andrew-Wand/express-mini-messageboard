@@ -9,22 +9,29 @@
 <body>
   <h1><%= title %></h1>
   <p>Welcome to <%= title %></p>
+  <a href="/new">Add New Message</a>
 
 
 
+  <div class="main-container">
+    <div>
+      <ul>
+        <% messages.map((message)=>{ %>
+        <li class="message-container">
+          <p class="message-name"><%= message.user %></p>
+          <p class="message-content"><%= message.text %></p>
+          <p class="message-date"><%= message.added %></p>
 
 
-  <ul>
-    <% messages.map((message)=>{ %>
-    <li>
-      <%= message.user %>
-      <%= message.text %>
-      <%= message.added %>
-    </li>
-    <% }) %>
-  </ul>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
 
-  <a href="/new">add new message</a>
+  </div>
+
+
+
 </body>
 
 </html>
